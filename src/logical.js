@@ -16,11 +16,14 @@
  * Logical functions for JavaScript. <br/>
  * <img src="../../Logical_connectives_Hasse_diagram.svg.png" style="width:100%" />
  * @namespace Logical functions for JavaScript. <br/>
+ * <img src="../../Truth tables for the Boolean operations of arity up to 2.png" style="width:100%" />
+ * <br/>
  * <img src="../../Logical connectives venn diagrams.png" style="width:100%" />
  * @author <a href="mailto:matthewkastor@gmail.com">Matthew Kastor</a>
  * @license <a href="http://www.gnu.org/licenses/gpl-3.0-standalone.html"> 
  * gpl-3.0 </a>
  * @see <a href="../../Logical.pdf">Logical.pdf</a> Article: Truth function
+ * @see <a href="../../Logical.pdf">Logical.pdf</a> Article: Truth tables
  * @see <a href="../../Logical.pdf">Logical.pdf</a>
  *  Article: Boolean algebras canonically defined
  * @see <a href="../../Logical.pdf">Logical.pdf</a>
@@ -31,7 +34,9 @@
 var logical = {};
 /**
  * Logical contradiction. <br/>
- * <img src="../../00 contradiction false.png" />
+ * <img src="../../0 contradiction false.png" />
+ * <img src="../../0 contradiction false_ANSI.png" />
+ * <img src="../../0 contradiction false summary.png" />
  * @returns Returns false.
  * @example
  *  console.log(logical.f());
@@ -51,7 +56,9 @@ logical.contradiction = logical.fals;
 logical.Opq = logical.fals;
 /**
  * Logical tautology. <br/>
- * <img src="../../11 tautology true.png" />
+ * <img src="../../1 tautology true.png" />
+ * <img src="../../1 tautology true_ANSI.png" />
+ * <img src="../../1 tautology true summary.png" />
  * @returns Returns true.
  * @example
  *  console.log(logical.t());
@@ -72,6 +79,7 @@ logical.Vpq = logical.tru;
 /**
  * Logical identity. <br/>
  * <img src="../../01 identity.png" />
+ * <img src="../../01 identity_ANSI.png" />
  * @param {boolean} p
  * @returns {Boolean} Returns p.
  * @example
@@ -87,7 +95,7 @@ logical.identity = function identity(p) {
 /**
  * NOT. Logical negation. <code>!p</code> <br/>
  * <img src="../../10 negation.png" />
- * <img src="../../NOT_ANSI.png" />
+ * <img src="../../10 NOT_ANSI.png" />
  * @param {Boolean} p
  * @returns {Boolean} Returns the negation of p.
  * @example
@@ -106,6 +114,7 @@ logical.negation = logical.not;
  * AND. Logical conjunction. <code>p && q</code> <br/>
  * <img src="../../0001 conjunction.png" />
  * <img src="../../0001 AND_ANSI.png" />
+ * <img src="../../0001 conjunction summary.png" />
  * @param {Boolean} p
  * @param {Boolean} q
  * @returns {Boolean} Returns the conjunction of p and q.
@@ -127,6 +136,7 @@ logical.Kpq = logical.and;
  * NAND. Compliment of AND. <code>!(p && q)</code> <br/>
  * <img src="../../1110 alternative denial.png" />
  * <img src="../../1110 NAND_ANSI.png" />
+ * <img src="../../1110 alternative denial summary.png" />
  * @param {boolean} p
  * @param {boolean} q
  * @returns {Boolean} Returns the negated conjunction of p and q.
@@ -148,6 +158,7 @@ logical.alternativeDenial = logical.nand;
  * OR Logical disjunction. <code>p || q</code> <br/>
  * <img src="../../0111 disjunction.png" />
  * <img src="../../0111 OR_ANSI.png" />
+ * <img src="../../0111 disjunction summary.png" />
  * @param {boolean} p
  * @param {boolean} q
  * @returns {Boolean} Returns the disjunction of p and q.
@@ -169,6 +180,7 @@ logical.Apq = logical.or;
  * NOR. The compliment of OR. <code>!(p || q)</code> <br/>
  * <img src="../../1000 joint denial.png" />
  * <img src="../../1000 NOR_ANSI.png" />
+ * <img src="../../1000 joint denial summary.png" />
  * @param {boolean} p
  * @param {boolean} q
  * @returns {Boolean} Returns the negated disjunction of p and q.
@@ -190,6 +202,7 @@ logical.jointDenial = logical.nor;
  * Exclusive OR. <code>(p || q) && (!(p && q))</code> <br/>
  * <img src="../../0110 exclusive disjunction.png" />
  * <img src="../../0110 XOR_ANSI.png" />
+ * <img src="../../0110 exclusive disjunction summary.png" />
  * @param {boolean} p
  * @param {boolean} q
  * @returns {Boolean} Returns the exclusive disjunction of p and q.
@@ -212,6 +225,7 @@ logical.Jpq = logical.xor;
  *  <code>!((p || q) && (!(p && q)))</code> <br/>
  * <img src="../../1001 material biconditional.png" />
  * <img src="../../1001 XNOR_ANSI.png" />
+ * <img src="../../1001 material biconditional summary.png" />
  * @param {boolean} p
  * @param {boolean} q
  * @returns {Boolean} Returns the negated exclusive disjunction of p and q.
@@ -248,6 +262,8 @@ logical.Epq = logical.xnor;
 /**
  * Material implication. <code>!p || q</code> <br/>
  * <img src="../../1011 material implication.png" />
+ * <img src="../../1011 material implication_ANSI.png" />
+ * <img src="../../1011 material implication summary.png" />
  * @param {boolean} p
  * @param {boolean} q
  * @returns {Boolean} Returns the material implication of p and q.
@@ -278,6 +294,8 @@ logical.Cpq = logical.materialImplication;
 /**
  * Converse material implication. <code>p || !q</code> <br/>
  * <img src="../../1101 converse material implication.png" />
+ * <img src="../../1101 converse material implication_ANSI.png" />
+ * <img src="../../1101 converse material implication summary.png" />
  * @param {boolean} p
  * @param {boolean} q
  * @returns {Boolean} Returns the converse material implication of p and q.
@@ -304,6 +322,8 @@ logical.Bpq = logical.converseMaterialImplication;
 /**
  * Material nonimplication. <code>p && !q</code> <br/>
  * <img src="../../0100 material nonimplication.png" />
+ * <img src="../../0100 material nonimplication_ANSI.png" />
+ * <img src="../../0100 material nonimplication summary.png" />
  * @param {boolean} p
  * @param {boolean} q
  * @returns {Boolean} Returns the material nonimplication of p and q.
@@ -330,6 +350,8 @@ logical.Lpq = logical.materialNonImplication;
 /**
  * Converse material nonimplication. <code>!p && q</code> <br/>
  * <img src="../../0010 converse material nonimplication.png" />
+ * <img src="../../0010 converse material nonimplication_ANSI.png" />
+ * <img src="../../0010 converse material nonimplication summary.png" />
  * @param {boolean} p
  * @param {boolean} q
  * @returns {Boolean} Returns the converse material nonimplication of p and q.
@@ -356,6 +378,8 @@ logical.Mpq = logical.converseMaterialNonImplication;
 /**
  * Negates p, ignoring q. <code>!p</code> <br/>
  * <img src="../../1010 not p.png" />
+ * <img src="../../1010 not p_ANSI.png" />
+ * <img src="../../1010 not p summary.png" />
  * @param {boolean} p
  * @param {boolean} q
  * @returns {Boolean} Returns the negated value of p.
@@ -376,6 +400,8 @@ logical.Fpq = logical.not_p;
 /**
  * Negates q, ignoring p. <code>!q</code> <br/>
  * <img src="../../1100 not q.png" />
+ * <img src="../../1100 not q_ANSI.png" />
+ * <img src="../../1100 not q summary.png" />
  * @param {boolean} p
  * @param {boolean} q
  * @returns {Boolean} Returns the negated value of q.
@@ -396,6 +422,8 @@ logical.Gpq = logical.not_q;
 /**
  * Projection of p. <br/>
  * <img src="../../0101 proposition p.png" />
+ * <img src="../../0101 proposition p_ANSI.png" />
+ * <img src="../../0101 proposition p summary.png" />
  * @param {boolean} p
  * @param {boolean} q
  * @returns {Boolean} Returns the value of p.
@@ -412,6 +440,8 @@ logical.Ipq = logical.p;
 /**
  * Projection of q. <br/>
  * <img src="../../0011 proposition q.png" />
+ * <img src="../../0011 proposition q_ANSI.png" />
+ * <img src="../../0011 proposition q summary.png" />
  * @param {boolean} p
  * @param {boolean} q
  * @returns {Boolean} Returns the value of q.
@@ -428,7 +458,9 @@ logical.Hpq = logical.q;
 /**
  * Conditioned disjunction. <code>(!q || p) && (q || r)</code> Works just like
  *  <code>if(q) { return p } else { return r }</code>. Works just like the
- *  conditional operator <code>q ? p : r</code>
+ *  conditional operator <code>q ? p : r</code> <br>
+ * <img src="../../01000111 conditioned disjunction summary.png" />
+ * <img src="../../01000111 CONDITIONED_DISJUNCTION_ANSI.png" />
  * @param {boolean} p
  * @param {boolean} q
  * @param {boolean} r
@@ -441,7 +473,7 @@ logical.Hpq = logical.q;
  */
 logical.conditionedDisjunction = function conditionedDisjunction(p, q, r) {
     'use strict';
-    return logical.and(logical.materialImplication(q, p), logical.materialImplication(!q, r));
+    return logical.and(logical.implies(q, p), logical.or(q, r));
 };
 /** alias for conditioned disjunction */
 logical.thenIfElse = logical.conditionedDisjunction;
@@ -450,7 +482,9 @@ logical.conditionalDisjunction = logical.conditionedDisjunction;
 /**
  * Conditioned disjunction. <code>(p && q) || (!p && r)</code> Works just like
  *  <code>if(p) { return q } else { return r }</code>. Works just like the
- *  conditional operator <code>p ? q : r</code>
+ *  conditional operator <code>p ? q : r</code> <br>
+ * <img src="../../01010011 conditioned disjunction summary.png" />
+ * <img src="../../01010011 CONDITIONED_DISJUNCTION_ANSI.png" />
  * @param {boolean} p
  * @param {boolean} q
  * @param {boolean} r
@@ -503,11 +537,16 @@ logical.tools.truthTableToBoolean = function truthTableToBoolean(truthTable) {
 /**
  * Tests the output of the given logical function against the given truth table.
  * @param {Array} truth The truth table.
+ *  The rows are arranged with the inputs on the left and the rightmost value
+ *  being the expected output. For testing logical and, the input 1,1 would
+ *  be expected to return 1, so the row for this input would be 1,1,1. For more
+ *  examples see the tests.
  * @param {Function} logicalFunction The logical function to test.
  * @returns {Boolean} Returns true if everything checks out.
  * @throws {Error} Throws an error on the first row that
  *  doesn't meet expectations. The error will contain a property named "data"
  *  containing the failed rows "args", "expected", and "actual" values.
+ * @see <a href="../../../browser/tests/logical.test.js">Tests source</a>
  * @example 
  *  var result = false;
  *  try {

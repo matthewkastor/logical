@@ -1,6 +1,6 @@
 {
   "name": "logical",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Logic functions for JavaScript",
   "main": "./src/logical.js",
   "directories": {
@@ -29,7 +29,24 @@
   },
   "keywords": [
     "logical",
-    "atropa"
+    "atropa",
+    "boolean",
+    "logic",
+    "true",
+    "false",
+    "not",
+    "and",
+    "or",
+    "nand",
+    "nor",
+    "xor",
+    "xnor",
+    "implication",
+    "converse implication",
+    "nonimplication",
+    "converse nonimplication",
+    "conditioned disjunction",
+    "truth table"
   ],
   "author": {
     "name"      : "Matthew Kastor",
