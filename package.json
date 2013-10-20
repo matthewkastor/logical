@@ -1,0 +1,45 @@
+{
+  "name": "logical",
+  "version": "1.0.0",
+  "description": "Logic functions for JavaScript",
+  "main": "./src/logical.js",
+  "directories": {
+    "lib": "src",
+    "doc": "docs"
+  },
+  "devDependencies": {
+    "atropa-jsformatter": ">=0.1.2",
+    "atropa-jslint": ">=0.1.2",
+    "browserify": ">=2.29.1",
+    "jasmine-node": ">=1.11.0",
+    "jsdoc-toolkit": "git+https://github.com/matthewkastor/node-jsdoc-toolkit.git#fix-tests"
+  },
+  "scripts": {
+    "test": "jasmine-node specs/",
+    "buildBrowserModule" : "node dev/browserify.js",
+    "buildDocs": "jsdoc-toolkit -v -d=./docs/jsdoc/ -r -s src/",
+    "lint" : "atropa-jslint ./src/logical.js",
+    "srcFormat" : "atropa-jsformatter ./src/logical.js ./src/logical.js"
+  },
+  "homepage" : "https://github.com/matthewkastor/logical/",
+  "bugs" : "https://github.com/matthewkastor/logical/issues",
+  "repository": {
+    "type" : "git",
+    "url" : "git://github.com/matthewkastor/logical.git"
+  },
+  "keywords": [
+    "logical",
+    "atropa"
+  ],
+  "author": {
+    "name"      : "Matthew Kastor",
+    "email"     : "matthewkastor@gmail.com",
+    "url"       : "https://plus.google.com/100898583798552211130"
+  },
+  "licenses": [
+    {
+        "type" : "gpl-3.0",
+        "url" : "http://www.gnu.org/licenses/gpl-3.0-standalone.html"
+    }
+  ]
+}
