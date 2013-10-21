@@ -251,7 +251,7 @@ describe('logical', function () {
             );
         });
     });
-    describe('Np', function () {
+    describe('not_p', function () {
         it('should negate p', function () {
             var truth = [
                 [0, 0, 1],
@@ -260,13 +260,13 @@ describe('logical', function () {
                 [1, 1, 0]
             ];
             expect(
-                logical.tools.testTruthTable(truth, logical.Np)
+                logical.tools.testTruthTable(truth, logical.not_p)
             ).toEqual(
                 true
             );
         });
     });
-    describe('Nq', function () {
+    describe('not_q', function () {
         it('should negate q', function () {
             var truth = [
                 [0, 0, 1],
@@ -275,7 +275,7 @@ describe('logical', function () {
                 [1, 1, 0]
             ];
             expect(
-                logical.tools.testTruthTable(truth, logical.Nq)
+                logical.tools.testTruthTable(truth, logical.not_q)
             ).toEqual(
                 true
             );

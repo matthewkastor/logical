@@ -133,27 +133,119 @@ logical.conjunction = logical.and;
 /** alias for and */
 logical.Kpq = logical.and;
 /**
- * NAND. Compliment of AND. <code>!(p && q)</code> <br/>
- * <img src="../../1110 alternative denial.png" />
- * <img src="../../1110 NAND_ANSI.png" />
- * <img src="../../1110 alternative denial summary.png" />
+ * Material nonimplication. <code>p && !q</code> <br/>
+ * <img src="../../0010 material nonimplication.png" />
+ * <img src="../../0010 material nonimplication_ANSI.png" />
+ * <img src="../../0010 material nonimplication summary.png" />
  * @param {boolean} p
  * @param {boolean} q
- * @returns {Boolean} Returns the negated conjunction of p and q.
+ * @returns {Boolean} Returns the material nonimplication of p and q.
  * @example
- *  console.log(logical.nand(true, true));
- *  // logs false
+ *  console.log(logical.materialImplication(true, false));
+ *  // logs true
  * @see <a href="../../Logical.pdf">Logical.pdf</a>
- *  Article: Sheffer stroke
+ *  Article: Material nonimplication
  */
-logical.nand = function nand(p, q) {
+logical.materialNonImplication = function materialNonImplication(p, q) {
     'use strict';
-    return logical.not(logical.and(p, q));
+    return p && !q;
 };
-/** alias for nand */
-logical.Dpq = logical.nand;
-/** alias for nand */
-logical.alternativeDenial = logical.nand;
+/** alias for materialNonImplication */
+logical.abdjunction = logical.materialNonImplication;
+/** alias for materialNonImplication */
+logical.doesNotImply = logical.materialNonImplication;
+/** alias for materialNonImplication */
+logical.butNot = logical.materialNonImplication;
+/** alias for materialNonImplication */
+logical.Xp = logical.materialNonImplication;
+/** alias for materialNonImplication */
+logical.Lpq = logical.materialNonImplication;
+/**
+ * Projection of p. <br/>
+ * <img src="../../0011 proposition p.png" />
+ * <img src="../../0011 proposition p_ANSI.png" />
+ * <img src="../../0011 proposition p summary.png" />
+ * @param {boolean} p
+ * @param {boolean} q
+ * @returns {Boolean} Returns the value of p.
+ * @example
+ *  console.log(logical.p(false, true));
+ *  // logs false
+ */
+logical.p = function _p(p, q) {
+    'use strict';
+    return p;
+};
+/** alias for p */
+logical.Ipq = logical.p;
+/**
+ * Converse material nonimplication. <code>!p && q</code> <br/>
+ * <img src="../../0100 converse material nonimplication.png" />
+ * <img src="../../0100 converse material nonimplication_ANSI.png" />
+ * <img src="../../0100 converse material nonimplication summary.png" />
+ * @param {boolean} p
+ * @param {boolean} q
+ * @returns {Boolean} Returns the converse material nonimplication of p and q.
+ * @example
+ *  console.log(logical.converseMaterialNonImplication(false, true));
+ *  // logs true
+ * @see <a href="../../Logical.pdf">Logical.pdf</a>
+ *  Article: Converse nonimplication
+ */
+logical.converseMaterialNonImplication = function converseMaterialNonImplication(p, q) {
+    'use strict';
+    return !p && q;
+};
+/** alias for converseMaterialNonImplication */
+logical.isNotImpliedBy = logical.converseMaterialNonImplication;
+/** alias for converseMaterialNonImplication */
+logical.notBut = logical.converseMaterialNonImplication;
+/** alias for converseMaterialNonImplication */
+logical.converseNonImplication = logical.converseMaterialNonImplication;
+/** alias for converseMaterialNonImplication */
+logical.Xq = logical.converseMaterialNonImplication;
+/** alias for converseMaterialNonImplication */
+logical.Mpq = logical.converseMaterialNonImplication;
+/**
+ * Projection of q. <br/>
+ * <img src="../../0101 proposition q.png" />
+ * <img src="../../0101 proposition q_ANSI.png" />
+ * <img src="../../0101 proposition q summary.png" />
+ * @param {boolean} p
+ * @param {boolean} q
+ * @returns {Boolean} Returns the value of q.
+ * @example
+ *  console.log(logical.p(false, true));
+ *  // logs true
+ */
+logical.q = function _q(p, q) {
+    'use strict';
+    return q;
+};
+/** alias for q */
+logical.Hpq = logical.q;
+/**
+ * Exclusive OR. <code>(p || q) && (!(p && q))</code> <br/>
+ * <img src="../../0110 exclusive disjunction.png" />
+ * <img src="../../0110 XOR_ANSI.png" />
+ * <img src="../../0110 exclusive disjunction summary.png" />
+ * @param {boolean} p
+ * @param {boolean} q
+ * @returns {Boolean} Returns the exclusive disjunction of p and q.
+ * @example
+ *  console.log(logical.xor(true, false));
+ *  // logs true
+ * @see <a href="../../Logical.pdf">Logical.pdf</a>
+ *  Article: Exclusive or
+ */
+logical.xor = function xor(p, q) {
+    'use strict';
+    return logical.and(logical.or(p, q), logical.nand(p, q));
+};
+/** alias for xor */
+logical.exclusiveDisjunction = logical.xor;
+/** alias for xor */
+logical.Jpq = logical.xor;
 /**
  * OR Logical disjunction. <code>p || q</code> <br/>
  * <img src="../../0111 disjunction.png" />
@@ -199,28 +291,6 @@ logical.Xpq = logical.nor;
 /** alias for nor */
 logical.jointDenial = logical.nor;
 /**
- * Exclusive OR. <code>(p || q) && (!(p && q))</code> <br/>
- * <img src="../../0110 exclusive disjunction.png" />
- * <img src="../../0110 XOR_ANSI.png" />
- * <img src="../../0110 exclusive disjunction summary.png" />
- * @param {boolean} p
- * @param {boolean} q
- * @returns {Boolean} Returns the exclusive disjunction of p and q.
- * @example
- *  console.log(logical.xor(true, false));
- *  // logs true
- * @see <a href="../../Logical.pdf">Logical.pdf</a>
- *  Article: Exclusive or
- */
-logical.xor = function xor(p, q) {
-    'use strict';
-    return logical.and(logical.or(p, q), logical.nand(p, q));
-};
-/** alias for xor */
-logical.exclusiveDisjunction = logical.xor;
-/** alias for xor */
-logical.Jpq = logical.xor;
-/**
  * Exclusive NOR. The complement of exclusive OR.
  *  <code>!((p || q) && (!(p && q)))</code> <br/>
  * <img src="../../1001 material biconditional.png" />
@@ -260,10 +330,80 @@ logical.materialBiconditional = logical.xnor;
 /** alias for xnor */
 logical.Epq = logical.xnor;
 /**
+ * Negates q, ignoring p. <code>!q</code> <br/>
+ * <img src="../../1010 not q.png" />
+ * <img src="../../1010 not q_ANSI.png" />
+ * <img src="../../1010 not q summary.png" />
+ * @param {boolean} p
+ * @param {boolean} q
+ * @returns {Boolean} Returns the negated value of q.
+ * @example
+ *  console.log(logical.Nq(false, true));
+ *  // logs false
+ * @see <a href="../../Logical.pdf">Logical.pdf</a>
+ *  Article: Negation
+ */
+logical.not_q = function not_q(p, q) {
+    'use strict';
+    return !q;
+};
+/** alias for not_q */
+logical.Nq = logical.not_q;
+/** alias for not_q */
+logical.Gpq = logical.not_q;
+/**
+ * Converse material implication. <code>p || !q</code> <br/>
+ * <img src="../../1011 converse material implication.png" />
+ * <img src="../../1011 converse material implication_ANSI.png" />
+ * <img src="../../1011 converse material implication summary.png" />
+ * @param {boolean} p
+ * @param {boolean} q
+ * @returns {Boolean} Returns the converse material implication of p and q.
+ * @example
+ *  console.log(logical.converseMaterialImplication(false, true));
+ *  // logs false
+ * @see <a href="../../Logical.pdf">Logical.pdf</a>
+ *  Article: Converse implication
+ */
+logical.converseMaterialImplication = function converseMaterialImplication(p, q) {
+    'use strict';
+    return p || !q;
+};
+/** alias for converseMaterialImplication */
+logical.isImpliedBy = logical.converseMaterialImplication;
+/** alias for converseMaterialImplication */
+logical.converseImplication = logical.converseMaterialImplication;
+/** alias for converseMaterialImplication */
+logical.XNq = logical.converseMaterialImplication;
+/** alias for converseMaterialImplication */
+logical.Bpq = logical.converseMaterialImplication;
+/**
+ * Negates p, ignoring q. <code>!p</code> <br/>
+ * <img src="../../1100 not p.png" />
+ * <img src="../../1100 not p_ANSI.png" />
+ * <img src="../../1100 not p summary.png" />
+ * @param {boolean} p
+ * @param {boolean} q
+ * @returns {Boolean} Returns the negated value of p.
+ * @example
+ *  console.log(logical.Np(false, true));
+ *  // logs true
+ * @see <a href="../../Logical.pdf">Logical.pdf</a>
+ *  Article: Negation
+ */
+logical.not_p = function not_p(p, q) {
+    'use strict';
+    return !p;
+};
+/** alias for not_p */
+logical.Np = logical.not_p;
+/** alias for not_p */
+logical.Fpq = logical.not_p;
+/**
  * Material implication. <code>!p || q</code> <br/>
- * <img src="../../1011 material implication.png" />
- * <img src="../../1011 material implication_ANSI.png" />
- * <img src="../../1011 material implication summary.png" />
+ * <img src="../../1101 material implication.png" />
+ * <img src="../../1101 material implication_ANSI.png" />
+ * <img src="../../1101 material implication summary.png" />
  * @param {boolean} p
  * @param {boolean} q
  * @returns {Boolean} Returns the material implication of p and q.
@@ -292,169 +432,27 @@ logical.XNp = logical.materialImplication;
 /** alias for materialImplication */
 logical.Cpq = logical.materialImplication;
 /**
- * Converse material implication. <code>p || !q</code> <br/>
- * <img src="../../1101 converse material implication.png" />
- * <img src="../../1101 converse material implication_ANSI.png" />
- * <img src="../../1101 converse material implication summary.png" />
+ * NAND. Compliment of AND. <code>!(p && q)</code> <br/>
+ * <img src="../../1110 alternative denial.png" />
+ * <img src="../../1110 NAND_ANSI.png" />
+ * <img src="../../1110 alternative denial summary.png" />
  * @param {boolean} p
  * @param {boolean} q
- * @returns {Boolean} Returns the converse material implication of p and q.
+ * @returns {Boolean} Returns the negated conjunction of p and q.
  * @example
- *  console.log(logical.converseMaterialImplication(false, true));
+ *  console.log(logical.nand(true, true));
  *  // logs false
  * @see <a href="../../Logical.pdf">Logical.pdf</a>
- *  Article: Converse implication
+ *  Article: Sheffer stroke
  */
-logical.converseMaterialImplication = function converseMaterialImplication(p, q) {
+logical.nand = function nand(p, q) {
     'use strict';
-    return p || !q;
+    return logical.not(logical.and(p, q));
 };
-/** alias for converseMaterialImplication */
-logical.isImpliedBy = logical.converseMaterialImplication;
-/** alias for converseMaterialImplication */
-logical.given = logical.converseMaterialImplication;
-/** alias for converseMaterialImplication */
-logical.converseImplication = logical.converseMaterialImplication;
-/** alias for converseMaterialImplication */
-logical.XNq = logical.converseMaterialImplication;
-/** alias for converseMaterialImplication */
-logical.Bpq = logical.converseMaterialImplication;
-/**
- * Material nonimplication. <code>p && !q</code> <br/>
- * <img src="../../0100 material nonimplication.png" />
- * <img src="../../0100 material nonimplication_ANSI.png" />
- * <img src="../../0100 material nonimplication summary.png" />
- * @param {boolean} p
- * @param {boolean} q
- * @returns {Boolean} Returns the material nonimplication of p and q.
- * @example
- *  console.log(logical.materialImplication(true, false));
- *  // logs true
- * @see <a href="../../Logical.pdf">Logical.pdf</a>
- *  Article: Material nonimplication
- */
-logical.materialNonImplication = function materialNonImplication(p, q) {
-    'use strict';
-    return p && !q;
-};
-/** alias for materialNonImplication */
-logical.abdjunction = logical.materialNonImplication;
-/** alias for materialNonImplication */
-logical.doesNotImply = logical.materialNonImplication;
-/** alias for materialNonImplication */
-logical.butNot = logical.materialNonImplication;
-/** alias for materialNonImplication */
-logical.Xp = logical.materialNonImplication;
-/** alias for materialNonImplication */
-logical.Lpq = logical.materialNonImplication;
-/**
- * Converse material nonimplication. <code>!p && q</code> <br/>
- * <img src="../../0010 converse material nonimplication.png" />
- * <img src="../../0010 converse material nonimplication_ANSI.png" />
- * <img src="../../0010 converse material nonimplication summary.png" />
- * @param {boolean} p
- * @param {boolean} q
- * @returns {Boolean} Returns the converse material nonimplication of p and q.
- * @example
- *  console.log(logical.converseMaterialNonImplication(false, true));
- *  // logs true
- * @see <a href="../../Logical.pdf">Logical.pdf</a>
- *  Article: Converse nonimplication
- */
-logical.converseMaterialNonImplication = function converseMaterialNonImplication(p, q) {
-    'use strict';
-    return !p && q;
-};
-/** alias for converseMaterialNonImplication */
-logical.isNotImpliedBy = logical.converseMaterialNonImplication;
-/** alias for converseMaterialNonImplication */
-logical.notBut = logical.converseMaterialNonImplication;
-/** alias for converseMaterialNonImplication */
-logical.converseNonImplication = logical.converseMaterialNonImplication;
-/** alias for converseMaterialNonImplication */
-logical.Xq = logical.converseMaterialNonImplication;
-/** alias for converseMaterialNonImplication */
-logical.Mpq = logical.converseMaterialNonImplication;
-/**
- * Negates p, ignoring q. <code>!p</code> <br/>
- * <img src="../../1010 not p.png" />
- * <img src="../../1010 not p_ANSI.png" />
- * <img src="../../1010 not p summary.png" />
- * @param {boolean} p
- * @param {boolean} q
- * @returns {Boolean} Returns the negated value of p.
- * @example
- *  console.log(logical.Np(false, true));
- *  // logs true
- * @see <a href="../../Logical.pdf">Logical.pdf</a>
- *  Article: Negation
- */
-logical.not_p = function not_p(p, q) {
-    'use strict';
-    return !p;
-};
-/** alias for not_p */
-logical.Np = logical.not_p;
-/** alias for not_p */
-logical.Fpq = logical.not_p;
-/**
- * Negates q, ignoring p. <code>!q</code> <br/>
- * <img src="../../1100 not q.png" />
- * <img src="../../1100 not q_ANSI.png" />
- * <img src="../../1100 not q summary.png" />
- * @param {boolean} p
- * @param {boolean} q
- * @returns {Boolean} Returns the negated value of q.
- * @example
- *  console.log(logical.Nq(false, true));
- *  // logs false
- * @see <a href="../../Logical.pdf">Logical.pdf</a>
- *  Article: Negation
- */
-logical.not_q = function not_q(p, q) {
-    'use strict';
-    return !q;
-};
-/** alias for not_q */
-logical.Nq = logical.not_q;
-/** alias for not_q */
-logical.Gpq = logical.not_q;
-/**
- * Projection of p. <br/>
- * <img src="../../0101 proposition p.png" />
- * <img src="../../0101 proposition p_ANSI.png" />
- * <img src="../../0101 proposition p summary.png" />
- * @param {boolean} p
- * @param {boolean} q
- * @returns {Boolean} Returns the value of p.
- * @example
- *  console.log(logical.p(false, true));
- *  // logs false
- */
-logical.p = function _p(p, q) {
-    'use strict';
-    return p;
-};
-/** alias for p */
-logical.Ipq = logical.p;
-/**
- * Projection of q. <br/>
- * <img src="../../0011 proposition q.png" />
- * <img src="../../0011 proposition q_ANSI.png" />
- * <img src="../../0011 proposition q summary.png" />
- * @param {boolean} p
- * @param {boolean} q
- * @returns {Boolean} Returns the value of q.
- * @example
- *  console.log(logical.p(false, true));
- *  // logs true
- */
-logical.q = function _q(p, q) {
-    'use strict';
-    return q;
-};
-/** alias for q */
-logical.Hpq = logical.q;
+/** alias for nand */
+logical.Dpq = logical.nand;
+/** alias for nand */
+logical.alternativeDenial = logical.nand;
 /**
  * Conditioned disjunction. <code>(!q || p) && (q || r)</code> Works just like
  *  <code>if(q) { return p } else { return r }</code>. Works just like the

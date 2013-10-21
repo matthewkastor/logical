@@ -68,7 +68,6 @@ The above will log the following:
   Cpq: [Function: materialImplication],
   converseMaterialImplication: [Function: converseMaterialImplication],
   isImpliedBy: [Function: converseMaterialImplication],
-  given: [Function: converseMaterialImplication],
   converseImplication: [Function: converseMaterialImplication],
   XNq: [Function: converseMaterialImplication],
   Bpq: [Function: converseMaterialImplication],
