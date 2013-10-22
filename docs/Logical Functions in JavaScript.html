@@ -1,0 +1,383 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+        <title>
+            Logical Functions in JavaScript
+        </title>
+</head>
+<body>
+        <h1>
+            Logical Functions in JavaScript
+        </h1>
+
+        <p>
+            <i>Just released a new node module jam packed with logical functions written in JavaScript</i>
+        </p>
+        <!--more-->
+
+        <p>
+            So I was getting back to my roots in electronics engineering, going through some of my textbooks from college while searching for some esoteric information I need for a project. While rummaging through the pages I came across a chapter on Karnaugh mapping and was inspired to check if JavaScript has logical operators for all 16 2-ary boolean functions, it doesn't. While JavaScript does include enough of the logical operators to allow you to build any logic expression you could want, things can get a bit hairy with all those symbols in a single statement. I decided to write up <a href="https://github.com/matthewkastor/logical">a small library (https://github.com/matthewkastor/logical)</a> that gives actual names to the logical expressions in order to make them easier for people to use. Here, I'll list the functions by number, give the JavaScript version of the logical statement, and list the common aliases of the functions.
+        </p>
+
+        <div class="separator" style="clear: both;">
+            <a href="truth tables for the boolean operations of arity up to 2.png" style="margin-left: 1em; margin-right: 1em;"><img src="truth tables for the boolean operations of arity up to 2.png" border="0"></a>
+        </div>
+
+        <p>
+            In the following JavaScript examples "p", "q", and "r" are variables meant to contain Boolean values.
+        </p>
+        
+        
+
+        <div class="defs">
+            <h3>
+                0-ary : Constants
+            </h3>
+
+            <p>
+                These functions take 0 arguments.
+            </p>
+
+            <p>
+                Function: 0
+                <br>
+                Prose: "false"
+                <br>
+                Aliases: false, F, contradiction, Opq
+                <br>
+                JavaScript: <code>false</code>
+                <br>
+            </p>
+
+            <div class="separator" style="clear: both;">
+                <a href="0 contradiction false_ANSI.png" style="margin-left: 1em; margin-right: 1em;"><img src="0 contradiction false_ANSI.png" border="0"></a>
+            </div>
+
+            <p>
+                Function: 1
+                <br>
+                Prose: "true"
+                <br>
+                Aliases: true, T, tautology, Vpq
+                <br>
+                JavaScript: <code>true</code>
+                <br>
+            </p>
+
+            <div class="separator" style="clear: both;">
+                <a href="1 tautology true_ANSI.png" style="margin-left: 1em; margin-right: 1em;"><img src="1 tautology true_ANSI.png" border="0"></a>
+            </div>
+
+            <h3>
+                1-ary : Unary Operations
+            </h3>
+
+            <p>
+                These functions take a single argument "p".
+            </p>
+
+            <p>
+                Function: 01
+                <br>
+                Prose: "identity"
+                <br>
+                Aliases: identity
+                <br>
+                JavaScript: <code>p</code>
+                <br>
+            </p>
+
+            <div class="separator" style="clear: both;">
+                <a href="01 identity_ANSI.png" style="margin-left: 1em; margin-right: 1em;"><img src="01 identity_ANSI.png" border="0"></a>
+            </div>
+
+            <p>
+                Function: 10
+                <br>
+                Prose: "not"
+                <br>
+                Aliases: not, negation
+                <br>
+                JavaScript: <code>!p</code>
+                <br>
+            </p>
+
+            <div class="separator" style="clear: both;">
+                <a href="10 NOT_ANSI.png" style="margin-left: 1em; margin-right: 1em;"><img src="10 NOT_ANSI.png" border="0"></a>
+            </div>
+
+            <h3>
+                2-ary : Binary Operations
+            </h3>
+
+            <p>
+                These functions take two arguments "p" and "q".
+            </p>
+
+            <p>
+                Function: 0000
+                <br>
+                See 0-ary 0 above.
+            </p>
+
+            <p>
+                Function: 0001
+                <br>
+                Prose: "p and q"
+                <br>
+                Aliases: AND, conjunction, Kpq
+                <br>
+                JavaScript: <code>p &amp;&amp; q</code>
+                <br>
+            </p>
+
+            <div class="separator" style="clear: both;">
+                <a href="0001 AND_ANSI.png" style="margin-left: 1em; margin-right: 1em;"><img src="0001 AND_ANSI.png" border="0"></a>
+            </div>
+
+            <p>
+                Function: 0010
+                <br>
+                Prose: "p but not q", "p does not imply q", "if not q, follow p, else false"
+                <br>
+                Aliases: material nonimplication, abdjunction, Xp, Lpq
+                <br>
+                JavaScript: <code>p &amp;&amp; !q</code>
+                <br>
+            </p>
+
+            <div class="separator" style="clear: both;">
+                <a href="0010 material nonimplication_ANSI.png" style="margin-left: 1em; margin-right: 1em;"><img src="0010 material nonimplication_ANSI.png" border="0"></a>
+            </div>
+
+            <p>
+                Function: 0011
+                <br>
+                Prose: "p"
+                <br>
+                Aliases: projection of p, proposition p, Ipq
+                <br>
+                JavaScript: <code>p</code>
+                <br>
+            </p>
+
+            <div class="separator" style="clear: both;">
+                <a href="0011 proposition p_ANSI.png" style="margin-left: 1em; margin-right: 1em;"><img src="0011 proposition p_ANSI.png" border="0"></a>
+            </div>
+
+            <p>
+                Function: 0100
+                <br>
+                Prose: "not p but q", "p is not implied by q", "if not p, follow q, else false"
+                <br>
+                Aliases: converse nonimplication, converse material nonimplication, Xq, Mpq
+                <br>
+                JavaScript: <code>!p &amp;&amp; q</code>
+                <br>
+            </p>
+
+            <div class="separator" style="clear: both;">
+                <a href="0100 converse material nonimplication_ANSI.png" style="margin-left: 1em; margin-right: 1em;"><img src="0100 converse material nonimplication_ANSI.png" border="0"></a>
+            </div>
+
+            <p>
+                Function: 0101
+                <br>
+                Prose: "q"
+                <br>
+                Aliases: q, projection of q, proposition q, Hpq
+                <br>
+                JavaScript: <code>q</code>
+                <br>
+            </p>
+
+            <div class="separator" style="clear: both;">
+                <a href="0101 proposition q_ANSI.png" style="margin-left: 1em; margin-right: 1em;"><img src="0101 proposition q_ANSI.png" border="0"></a>
+            </div>
+
+            <p>
+                Function: 0110
+                <br>
+                "p or q but not both"
+                <br>
+                Aliases: XOR, exclusive or, exclusive disjunction, Jpq
+                <br>
+                JavaScript: <code>(p || q) &amp;&amp; (!(p &amp;&amp; q))</code>
+                <br>
+            </p>
+
+            <div class="separator" style="clear: both;">
+                <a href="0110 XOR_ANSI.png" style="margin-left: 1em; margin-right: 1em;"><img src="0110 XOR_ANSI.png" border="0"></a>
+            </div>
+
+            <p>
+                Function: 0111
+                <br>
+                Prose: "p or q"
+                <br>
+                Aliases: OR, disjunction, Apq
+                <br>
+                JavaScript: <code>p || q</code>
+                <br>
+            </p>
+
+            <div class="separator" style="clear: both;">
+                <a href="0111 OR_ANSI.png" style="margin-left: 1em; margin-right: 1em;"><img src="0111 OR_ANSI.png" border="0"></a>
+            </div>
+
+            <p>
+                Function: 1000
+                <br>
+                Prose: "neither p nor q"
+                <br>
+                Aliases: NOR, joint denial, Xpq
+                <br>
+                JavaScript: <code>!(p || q)</code>
+                <br>
+            </p>
+
+            <div class="separator" style="clear: both;">
+                <a href="1000 NOR_ANSI.png" style="margin-left: 1em; margin-right: 1em;"><img src="1000 NOR_ANSI.png" border="0"></a>
+            </div>
+
+            <p>
+                Function: 1001
+                <br>
+                Prose: "p equals q"
+                <br>
+                Aliases:XNOR, exclusive NOR, equality, equals, if and only if, iff, biconditional, material biconditional, Epq,
+                <br>
+                JavaScript: <code>!((p || q) &amp;&amp; (!(p &amp;&amp; q)))</code>
+                <br>
+            </p>
+
+            <div class="separator" style="clear: both;">
+                <a href="1001 XNOR_ANSI.png" style="margin-left: 1em; margin-right: 1em;"><img src="1001 XNOR_ANSI.png" border="0"></a>
+            </div>
+
+            <p>
+                Function: 1010
+                <br>
+                Prose: "not q"
+                <br>
+                Aliases: Nq, Gpq
+                <br>
+                JavaScript: <code>!q</code>
+                <br>
+            </p>
+
+            <div class="separator" style="clear: both;">
+                <a href="1010 not q_ANSI.png" style="margin-left: 1em; margin-right: 1em;"><img src="1010 not q_ANSI.png" border="0"></a>
+            </div>
+
+            <p>
+                Function: 1011
+                <br>
+                Prose: "p is implied by q", "either p, or not q"
+                <br>
+                Aliases: converse material implication, converse implication, XNq, Bpq
+                <br>
+                JavaScript: <code>p || !q</code>
+                <br>
+            </p>
+
+            <div class="separator" style="clear: both;">
+                <a href="1011 converse material implication_ANSI.png" style="margin-left: 1em; margin-right: 1em;"><img src="1011 converse material implication_ANSI.png" border="0"></a>
+            </div>
+
+            <p>
+                Function: 1100
+                <br>
+                Prose: "not p"
+                <br>
+                Aliases: Np, Fpq
+                <br>
+                JavaScript: <code>!p</code>
+                <br>
+            </p>
+
+            <div class="separator" style="clear: both;">
+                <a href="1100 not p_ANSI.png" style="margin-left: 1em; margin-right: 1em;"><img src="1100 not p_ANSI.png" border="0"></a>
+            </div>
+
+            <p>
+                Function: 1101
+                <br>
+                Prose: "p implies q", "either not p, or q"
+                <br>
+                Aliases: material implication, material conditional, material consequence, implication, implies, conditional, XNp, Cpq
+                <br>
+                JavaScript: <code>!p || q</code>
+                <br>
+            </p>
+
+            <div class="separator" style="clear: both;">
+                <a href="1101 material implication_ANSI.png" style="margin-left: 1em; margin-right: 1em;"><img src="1101 material implication_ANSI.png" border="0"></a>
+            </div>
+
+            <p>
+                Function: 1110
+                <br>
+                Prose: "either not p, or not q", "not p and q simultaneously"
+                <br>
+                Aliases: NAND, Dpq, alternative denial
+                <br>
+                JavaScript: <code>!(p &amp;&amp; q)</code>
+                <br>
+            </p>
+
+            <div class="separator" style="clear: both;">
+                <a href="1110 NAND_ANSI.png" style="margin-left: 1em; margin-right: 1em;"><img src="1110 NAND_ANSI.png" border="0"></a>
+            </div>
+
+            <p>
+                Function: 1111
+                <br>
+                See 0-ary 1 above
+                <br>
+            </p>
+
+            <h3>
+                3-ary
+            </h3>
+
+            <p>
+                These functions take three arguments "p", "q", and "r"
+            </p>
+
+            <p>
+                Function: 01000111
+                <br>
+                Prose: "p if q, else r"
+                <br>
+                Aliases: conditioned disjunction, then if else
+                <br>
+                JavaScript: <code>(!q || p) &amp;&amp; (q || r)</code>
+                <br>
+            </p>
+
+            <div class="separator" style="clear: both;">
+                <a href="01000111 CONDITIONED_DISJUNCTION_ANSI.png" style="margin-left: 1em; margin-right: 1em;"><img src="01000111 CONDITIONED_DISJUNCTION_ANSI.png" border="0"></a>
+            </div>
+
+            <p>
+                Function: 01010011
+                <br>
+                Prose: "if p, follow q, else r"
+                <br>
+                Aliases: conditioned disjunction, if then else
+                <br>
+                JavaScript: <code>(p &amp;&amp; q) || (!p &amp;&amp; r)</code>
+                <br>
+            </p>
+
+            <div class="separator" style="clear: both;">
+                <a href="01010011 CONDITIONED_DISJUNCTION_ANSI.png" style="margin-left: 1em; margin-right: 1em;"><img src="01010011 CONDITIONED_DISJUNCTION_ANSI.png" border="0"></a>
+            </div>
+        </div>
+    
+
+</body>
+</html>
