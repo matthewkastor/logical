@@ -814,7 +814,6 @@
 			<th scope="col">symbol</th>
 			<th scope="col">html_symbol</th>
 			<th scope="col">number</th>
-			<th scope="col">javascript</th>
 		</tr>
 	</thead>
 	<tbody>
@@ -822,13 +821,11 @@
 			<td>&perp;</td>
 			<td>&amp;bottom;</td>
 			<td>0</td>
-			<td>false</td>
 		</tr>
 		<tr>
 			<td>⊤</td>
 			<td>&amp;top;</td>
 			<td>1</td>
-			<td>true</td>
 		</tr>
 	</tbody>
 </table>
@@ -844,7 +841,6 @@
 			<th scope="col">symbol</th>
 			<th scope="col">html_symbol</th>
 			<th scope="col">number</th>
-			<th scope="col">javascript</th>
 		</tr>
 	</thead>
 	<tbody>
@@ -852,25 +848,21 @@
 			<td>&perp;</td>
 			<td>&amp;bottom;</td>
 			<td>00</td>
-			<td>false</td>
 		</tr>
 		<tr>
 			<td>=</td>
 			<td>=</td>
 			<td>01</td>
-			<td>p</td>
 		</tr>
 		<tr>
 			<td>&not;</td>
 			<td>&amp;not;</td>
 			<td>10</td>
-			<td>!p</td>
 		</tr>
 		<tr>
 			<td>⊤</td>
 			<td>&amp;top;</td>
 			<td>11</td>
-			<td>true</td>
 		</tr>
 	</tbody>
 </table>
@@ -886,7 +878,6 @@
 			<th scope="col">symbol</th>
 			<th scope="col">html_symbol</th>
 			<th scope="col">number</th>
-			<th scope="col">javascript</th>
 		</tr>
 	</thead>
 	<tbody>
@@ -894,97 +885,81 @@
 			<td>&perp;</td>
 			<td>&amp;bottom;</td>
 			<td>0000</td>
-			<td>false</td>
 		</tr>
 		<tr>
 			<td>&and;</td>
 			<td>&amp;and;</td>
 			<td>0001</td>
-			<td>p &amp;&amp; q</td>
 		</tr>
 		<tr>
 			<td>↛</td>
 			<td>&amp;nrarr;</td>
 			<td>0010</td>
-			<td>p &amp;&amp; !q</td>
 		</tr>
 		<tr>
 			<td>p</td>
 			<td>p</td>
 			<td>0011</td>
-			<td>p</td>
 		</tr>
 		<tr>
 			<td>↚</td>
 			<td>&amp;nlarr;</td>
 			<td>0100</td>
-			<td>!p &amp;&amp; q</td>
 		</tr>
 		<tr>
 			<td>q</td>
 			<td>q</td>
 			<td>0101</td>
-			<td>q</td>
 		</tr>
 		<tr>
 			<td>↮</td>
 			<td>&amp;nleftrightarrow;</td>
 			<td>0110</td>
-			<td>(p&nbsp;||&nbsp;q)&nbsp;&amp;&amp;&nbsp;(!(p&nbsp;&amp;&amp;&nbsp;q))</td>
 		</tr>
 		<tr>
 			<td>&or;</td>
 			<td>&amp;or;</td>
 			<td>0111</td>
-			<td>p || q</td>
 		</tr>
 		<tr>
 			<td>&darr;</td>
 			<td>&amp;darr;</td>
 			<td>1000</td>
-			<td>!(p || q)</td>
 		</tr>
 		<tr>
 			<td>&harr;</td>
 			<td>&amp;leftrightarrow;</td>
 			<td>1001</td>
-			<td>!((p&nbsp;||&nbsp;q)&nbsp;&amp;&amp;&nbsp;(!(p&nbsp;&amp;&amp;&nbsp;q)))</td>
 		</tr>
 		<tr>
 			<td>&not;q</td>
 			<td>&amp;not;q</td>
 			<td>1010</td>
-			<td>!q</td>
 		</tr>
 		<tr>
 			<td>&larr;</td>
 			<td>&amp;larr;</td>
 			<td>1011</td>
-			<td>p || !q</td>
 		</tr>
 		<tr>
 			<td>&not;p</td>
 			<td>&amp;not;p</td>
 			<td>1100</td>
-			<td>!p</td>
 		</tr>
 		<tr>
 			<td>&rarr;</td>
 			<td>&amp;rarr;</td>
 			<td>1101</td>
-			<td>!p || q</td>
 		</tr>
 		<tr>
 			<td>&uarr;</td>
 			<td>&amp;uarr;</td>
 			<td>1110</td>
-			<td>!(p &amp;&amp; q)</td>
 		</tr>
 		<tr>
 			<td>⊤</td>
 			<td>&amp;top;</td>
 			<td>1111</td>
-			<td>true</td>
 		</tr>
 	</tbody>
 </table>
@@ -1000,7 +975,6 @@
 			<th scope="col">symbol</th>
 			<th scope="col">html_symbol</th>
 			<th scope="col">number</th>
-			<th scope="col">javascript</th>
 		</tr>
 	</thead>
 	<tbody>
@@ -1008,13 +982,11 @@
 			<td>(q&nbsp;&rarr;&nbsp;p)&nbsp;&and;&nbsp;(&not;q&nbsp;&rarr;&nbsp;r)</td>
 			<td>(q&nbsp;&amp;rarr;&nbsp;p)&nbsp;&amp;and;&nbsp;(&amp;not;q&nbsp;&amp;rarr;&nbsp;r)</td>
 			<td>01000111</td>
-			<td>(!q&nbsp;||&nbsp;p)&nbsp;&amp;&amp;&nbsp;(q&nbsp;||&nbsp;r)</td>
 		</tr>
 		<tr>
 			<td>(p&nbsp;&and;&nbsp;q)&nbsp;&or;&nbsp;(&not;p&nbsp;&and;&nbsp;r)</td>
 			<td>(p&nbsp;&amp;and;&nbsp;q)&nbsp;&amp;or;&nbsp;(&amp;not;p&nbsp;&amp;and;&nbsp;r)</td>
 			<td>01010011</td>
-			<td>(p&nbsp;&amp;&amp;&nbsp;q)&nbsp;||&nbsp;(!p&nbsp;&amp;&amp;&nbsp;r)</td>
 		</tr>
 	</tbody>
 </table>
