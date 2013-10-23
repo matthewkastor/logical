@@ -643,7 +643,7 @@
 
 <h2>JavaScript</h2>
 
-<p>JavaScript equvalents of logical functions which act on boolean inputs.</p>
+<p>JavaScript equvalents of logical functions which act on boolean inputs. The javascript column holds the javascript expression. The table column references the table where the logical function can be found. The number column references the logical functions number. The notes column is for notes about the javascript expression, such as if it is in some standard form.</p>
 
 <table border="1" cellpadding="1" cellspacing="1" style="width: 500px;" summary="JavaScript equvalents of logical functions which act on boolean inputs.">
 	<thead>
@@ -657,9 +657,147 @@
 	<caption>javascript</caption>
 	<tbody>
 		<tr>
+			<td>false</td>
+			<td>0-ary</td>
+			<td>0</td>
 			<td>&nbsp;</td>
+		</tr>
+		<tr>
+			<td>true</td>
+			<td>0-ary</td>
+			<td>1</td>
 			<td>&nbsp;</td>
+		</tr>
+		<tr>
+			<td>false</td>
+			<td>1-ary</td>
+			<td>00</td>
 			<td>&nbsp;</td>
+		</tr>
+		<tr>
+			<td>p</td>
+			<td>1-ary</td>
+			<td>01</td>
+			<td>&nbsp;</td>
+		</tr>
+		<tr>
+			<td>!p</td>
+			<td>1-ary</td>
+			<td>10</td>
+			<td>&nbsp;</td>
+		</tr>
+		<tr>
+			<td>true</td>
+			<td>1-ary</td>
+			<td>11</td>
+			<td>&nbsp;</td>
+		</tr>
+		<tr>
+			<td>false</td>
+			<td>2-ary</td>
+			<td>0000</td>
+			<td>&nbsp;</td>
+		</tr>
+		<tr>
+			<td>p &amp;&amp; q</td>
+			<td>2-ary</td>
+			<td>0001</td>
+			<td>&nbsp;</td>
+		</tr>
+		<tr>
+			<td>p &amp;&amp; !q</td>
+			<td>2-ary</td>
+			<td>0010</td>
+			<td>&nbsp;</td>
+		</tr>
+		<tr>
+			<td>p</td>
+			<td>2-ary</td>
+			<td>0011</td>
+			<td>&nbsp;</td>
+		</tr>
+		<tr>
+			<td>!p &amp;&amp; q</td>
+			<td>2-ary</td>
+			<td>0100</td>
+			<td>&nbsp;</td>
+		</tr>
+		<tr>
+			<td>q</td>
+			<td>2-ary</td>
+			<td>0101</td>
+			<td>&nbsp;</td>
+		</tr>
+		<tr>
+			<td>(p || q) &amp;&amp; (!(p &amp;&amp; q))</td>
+			<td>2-ary</td>
+			<td>0110</td>
+			<td>&nbsp;</td>
+		</tr>
+		<tr>
+			<td>p || q</td>
+			<td>2-ary</td>
+			<td>0111</td>
+			<td>&nbsp;</td>
+		</tr>
+		<tr>
+			<td>!(p || q)</td>
+			<td>2-ary</td>
+			<td>1000</td>
+			<td>&nbsp;</td>
+		</tr>
+		<tr>
+			<td>!((p || q) &amp;&amp; (!(p &amp;&amp; q)))</td>
+			<td>2-ary</td>
+			<td>1001</td>
+			<td>&nbsp;</td>
+		</tr>
+		<tr>
+			<td>!q</td>
+			<td>2-ary</td>
+			<td>1010</td>
+			<td>&nbsp;</td>
+		</tr>
+		<tr>
+			<td>p || !q</td>
+			<td>2-ary</td>
+			<td>1011</td>
+			<td>&nbsp;</td>
+		</tr>
+		<tr>
+			<td>!p</td>
+			<td>2-ary</td>
+			<td>1100</td>
+			<td>&nbsp;</td>
+		</tr>
+		<tr>
+			<td>!p || q</td>
+			<td>2-ary</td>
+			<td>1101</td>
+			<td>&nbsp;</td>
+		</tr>
+		<tr>
+			<td>!(p &amp;&amp; q)</td>
+			<td>2-ary</td>
+			<td>1110</td>
+			<td>&nbsp;</td>
+		</tr>
+		<tr>
+			<td>true</td>
+			<td>2-ary</td>
+			<td>1111</td>
+			<td>&nbsp;</td>
+		</tr>
+		<tr>
+			<td>(!q || p) &amp;&amp; (q || r)</td>
+			<td>3-ary</td>
+			<td>01000111</td>
+			<td>&nbsp;</td>
+		</tr>
+		<tr>
+			<td>(p &amp;&amp; q) || (!p &amp;&amp; r)</td>
+			<td>3-ary</td>
+			<td>01010011</td>
 			<td>&nbsp;</td>
 		</tr>
 	</tbody>
