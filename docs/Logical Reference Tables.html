@@ -44,6 +44,236 @@
 	</tbody>
 </table>
 
+<p>Because the function numbers uniquely identify equivalent functions at the given arity, they can be a foreign key to the logical_expressions table. Using the number column will allow you to relate information between most tables. The exception is with the logic_symbols table.</p>
+
+<p>The logic_symbols table is provided to allow looking up symbols, names, and html entities for a given name, symbol, or html entity. As each symbol is unique, the symbol column could be used as an index to this table.</p>
+
+<h2>Logic Symbols</h2>
+
+<p>This table lists logic symbols used in this database.</p>
+
+<p>The logic_symbols table is provided to allow looking up symbols, names, and html entities for a given name, symbol, or html entity. As each symbol is unique, the symbol column could be used as an index to this table.</p>
+
+<table border="1" cellpadding="1" cellspacing="1" summary="This table lists logic symbols used in this database.">
+	<thead>
+		<tr>
+			<th scope="col">symbol</th>
+			<th scope="col">html_code</th>
+			<th scope="col">name</th>
+		</tr>
+	</thead>
+	<caption>logic_symbols</caption>
+	<tbody>
+		<tr>
+			<td>&and;</td>
+			<td>&amp;and;</td>
+			<td>conjunction</td>
+		</tr>
+		<tr>
+			<td>&perp;</td>
+			<td>&amp;bottom;</td>
+			<td>contradiction</td>
+		</tr>
+		<tr>
+			<td>&darr;</td>
+			<td>&amp;darr;</td>
+			<td>joint denial</td>
+		</tr>
+		<tr>
+			<td>&larr;</td>
+			<td>&amp;larr;</td>
+			<td>converse implication</td>
+		</tr>
+		<tr>
+			<td>&harr;</td>
+			<td>&amp;leftrightarrow;</td>
+			<td>biconditional</td>
+		</tr>
+		<tr>
+			<td>↚</td>
+			<td>&amp;nlarr;</td>
+			<td>converse nonimplication</td>
+		</tr>
+		<tr>
+			<td>↮</td>
+			<td>&amp;nleftrightarrow;</td>
+			<td>exclusive disjunction</td>
+		</tr>
+		<tr>
+			<td>&not;</td>
+			<td>&amp;not;</td>
+			<td>negation</td>
+		</tr>
+		<tr>
+			<td>↛</td>
+			<td>&amp;nrarr;</td>
+			<td>nonimplication</td>
+		</tr>
+		<tr>
+			<td>&or;</td>
+			<td>&amp;or;</td>
+			<td>disjunction</td>
+		</tr>
+		<tr>
+			<td>&rarr;</td>
+			<td>&amp;rarr;</td>
+			<td>implication</td>
+		</tr>
+		<tr>
+			<td>⊤</td>
+			<td>&amp;top;</td>
+			<td>tautology</td>
+		</tr>
+		<tr>
+			<td>&uarr;</td>
+			<td>&amp;uarr;</td>
+			<td>alternative denial</td>
+		</tr>
+		<tr>
+			<td>=</td>
+			<td>=</td>
+			<td>equality</td>
+		</tr>
+	</tbody>
+</table>
+
+<h2>Logical Expressions</h2>
+
+<p>This table lists logical expressions. Unary functions take a single argument <code>p</code>. Binary functions take arguments <code>p</code> and <code>q</code>. Ternary functions take arguments <code>p</code>, <code>q</code>, and <code>r</code>. Each expression is to express unique functionality at the given arity. This ensures that each function number is unique and the column may be used as an index. The notes column is for notes about the expression, such as if it is in some standard form.</p>
+
+<table border="1" cellpadding="1" cellspacing="1" summary="This table lists logical expressions.">
+	<caption>logical_expressions</caption>
+	<thead>
+		<tr>
+			<th scope="col">expression</th>
+			<th scope="col">number</th>
+			<th scope="col">notes</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td>&perp;</td>
+			<td>0</td>
+			<td>&nbsp;</td>
+		</tr>
+		<tr>
+			<td>⊤</td>
+			<td>1</td>
+			<td>&nbsp;</td>
+		</tr>
+		<tr>
+			<td>&perp;</td>
+			<td>00</td>
+			<td>&nbsp;</td>
+		</tr>
+		<tr>
+			<td>=</td>
+			<td>01</td>
+			<td>&nbsp;</td>
+		</tr>
+		<tr>
+			<td>&not;</td>
+			<td>10</td>
+			<td>&nbsp;</td>
+		</tr>
+		<tr>
+			<td>⊤</td>
+			<td>11</td>
+			<td>&nbsp;</td>
+		</tr>
+		<tr>
+			<td>&perp;</td>
+			<td>0000</td>
+			<td>&nbsp;</td>
+		</tr>
+		<tr>
+			<td>&and;</td>
+			<td>0001</td>
+			<td>&nbsp;</td>
+		</tr>
+		<tr>
+			<td>↛</td>
+			<td>0010</td>
+			<td>&nbsp;</td>
+		</tr>
+		<tr>
+			<td>p</td>
+			<td>0011</td>
+			<td>&nbsp;</td>
+		</tr>
+		<tr>
+			<td>↚</td>
+			<td>0100</td>
+			<td>&nbsp;</td>
+		</tr>
+		<tr>
+			<td>q</td>
+			<td>0101</td>
+			<td>&nbsp;</td>
+		</tr>
+		<tr>
+			<td>↮</td>
+			<td>0110</td>
+			<td>&nbsp;</td>
+		</tr>
+		<tr>
+			<td>&or;</td>
+			<td>0111</td>
+			<td>&nbsp;</td>
+		</tr>
+		<tr>
+			<td>&darr;</td>
+			<td>1000</td>
+			<td>&nbsp;</td>
+		</tr>
+		<tr>
+			<td>&harr;</td>
+			<td>1001</td>
+			<td>&nbsp;</td>
+		</tr>
+		<tr>
+			<td>&not;q</td>
+			<td>1010</td>
+			<td>&nbsp;</td>
+		</tr>
+		<tr>
+			<td>&larr;</td>
+			<td>1011</td>
+			<td>&nbsp;</td>
+		</tr>
+		<tr>
+			<td>&not;p</td>
+			<td>1100</td>
+			<td>&nbsp;</td>
+		</tr>
+		<tr>
+			<td>&rarr;</td>
+			<td>1101</td>
+			<td>&nbsp;</td>
+		</tr>
+		<tr>
+			<td>&uarr;</td>
+			<td>1110</td>
+			<td>&nbsp;</td>
+		</tr>
+		<tr>
+			<td>⊤</td>
+			<td>1111</td>
+			<td>&nbsp;</td>
+		</tr>
+		<tr>
+			<td>(q&nbsp;&rarr;&nbsp;p)&nbsp;&and;&nbsp;(&not;q&nbsp;&rarr;&nbsp;r)</td>
+			<td>01000111</td>
+			<td>&nbsp;</td>
+		</tr>
+		<tr>
+			<td>(p&nbsp;&and;&nbsp;q)&nbsp;&or;&nbsp;(&not;p&nbsp;&and;&nbsp;r)</td>
+			<td>01010011</td>
+			<td>&nbsp;</td>
+		</tr>
+	</tbody>
+</table>
+
 <h2>Aliases</h2>
 
 <p>This table lists aliases for expressions. The name column is the alias and the number column is the logic expression number aliased.</p>
@@ -562,7 +792,7 @@
 
 <h2>JavaScript</h2>
 
-<p>JavaScript equvalents of logic expressions. The javascript column holds the javascript expression. The number column references the logic expression number. The notes column is for notes about the javascript expression, such as if it is in some standard form.</p>
+<p>JavaScript equvalents of logic expressions. The javascript column holds the javascript expression. The number column references the logic expression number. The notes column is for notes about the JavaScript expression, such as if it is in some standard form.</p>
 
 <table border="1" cellpadding="1" cellspacing="1" summary="JavaScript equvalents of logical functions which act on boolean inputs.">
 	<thead>
@@ -696,206 +926,5 @@
 		</tr>
 	</tbody>
 </table>
-
-<h2>Logic Symbols</h2>
-
-<p>This table lists logic symbols used in this database.</p>
-
-<table border="1" cellpadding="1" cellspacing="1" summary="This table lists logic symbols used in this database.">
-	<thead>
-		<tr>
-			<th scope="col">symbol</th>
-			<th scope="col">html_code</th>
-			<th scope="col">name</th>
-		</tr>
-	</thead>
-	<caption>logic_symbols</caption>
-	<tbody>
-		<tr>
-			<td>&and;</td>
-			<td>&amp;and;</td>
-			<td>conjunction</td>
-		</tr>
-		<tr>
-			<td>&perp;</td>
-			<td>&amp;bottom;</td>
-			<td>contradiction</td>
-		</tr>
-		<tr>
-			<td>&darr;</td>
-			<td>&amp;darr;</td>
-			<td>joint denial</td>
-		</tr>
-		<tr>
-			<td>&larr;</td>
-			<td>&amp;larr;</td>
-			<td>converse implication</td>
-		</tr>
-		<tr>
-			<td>&harr;</td>
-			<td>&amp;leftrightarrow;</td>
-			<td>biconditional</td>
-		</tr>
-		<tr>
-			<td>↚</td>
-			<td>&amp;nlarr;</td>
-			<td>converse nonimplication</td>
-		</tr>
-		<tr>
-			<td>↮</td>
-			<td>&amp;nleftrightarrow;</td>
-			<td>exclusive disjunction</td>
-		</tr>
-		<tr>
-			<td>&not;</td>
-			<td>&amp;not;</td>
-			<td>negation</td>
-		</tr>
-		<tr>
-			<td>↛</td>
-			<td>&amp;nrarr;</td>
-			<td>nonimplication</td>
-		</tr>
-		<tr>
-			<td>&or;</td>
-			<td>&amp;or;</td>
-			<td>disjunction</td>
-		</tr>
-		<tr>
-			<td>&rarr;</td>
-			<td>&amp;rarr;</td>
-			<td>implication</td>
-		</tr>
-		<tr>
-			<td>⊤</td>
-			<td>&amp;top;</td>
-			<td>tautology</td>
-		</tr>
-		<tr>
-			<td>&uarr;</td>
-			<td>&amp;uarr;</td>
-			<td>alternative denial</td>
-		</tr>
-		<tr>
-			<td>=</td>
-			<td>=</td>
-			<td>equality</td>
-		</tr>
-	</tbody>
-</table>
-
-<h2>Logical Expressions</h2>
-
-<p>This table lists logical expressions. Unary functions take a single argument <code>p</code>. Binary functions take arguments <code>p</code> and <code>q</code>. Ternary functions take arguments <code>p</code>, <code>q</code>, and <code>r</code>.</p>
-
-<table border="1" cellpadding="1" cellspacing="1" summary="This table lists logical expressions.">
-	<caption>logical_expressions</caption>
-	<thead>
-		<tr>
-			<th scope="col">expression</th>
-			<th scope="col">number</th>
-		</tr>
-	</thead>
-	<tbody>
-		<tr>
-			<td>&perp;</td>
-			<td>0</td>
-		</tr>
-		<tr>
-			<td>⊤</td>
-			<td>1</td>
-		</tr>
-		<tr>
-			<td>&perp;</td>
-			<td>00</td>
-		</tr>
-		<tr>
-			<td>=</td>
-			<td>01</td>
-		</tr>
-		<tr>
-			<td>&not;</td>
-			<td>10</td>
-		</tr>
-		<tr>
-			<td>⊤</td>
-			<td>11</td>
-		</tr>
-		<tr>
-			<td>&perp;</td>
-			<td>0000</td>
-		</tr>
-		<tr>
-			<td>&and;</td>
-			<td>0001</td>
-		</tr>
-		<tr>
-			<td>↛</td>
-			<td>0010</td>
-		</tr>
-		<tr>
-			<td>p</td>
-			<td>0011</td>
-		</tr>
-		<tr>
-			<td>↚</td>
-			<td>0100</td>
-		</tr>
-		<tr>
-			<td>q</td>
-			<td>0101</td>
-		</tr>
-		<tr>
-			<td>↮</td>
-			<td>0110</td>
-		</tr>
-		<tr>
-			<td>&or;</td>
-			<td>0111</td>
-		</tr>
-		<tr>
-			<td>&darr;</td>
-			<td>1000</td>
-		</tr>
-		<tr>
-			<td>&harr;</td>
-			<td>1001</td>
-		</tr>
-		<tr>
-			<td>&not;q</td>
-			<td>1010</td>
-		</tr>
-		<tr>
-			<td>&larr;</td>
-			<td>1011</td>
-		</tr>
-		<tr>
-			<td>&not;p</td>
-			<td>1100</td>
-		</tr>
-		<tr>
-			<td>&rarr;</td>
-			<td>1101</td>
-		</tr>
-		<tr>
-			<td>&uarr;</td>
-			<td>1110</td>
-		</tr>
-		<tr>
-			<td>⊤</td>
-			<td>1111</td>
-		</tr>
-		<tr>
-			<td>(q&nbsp;&rarr;&nbsp;p)&nbsp;&and;&nbsp;(&not;q&nbsp;&rarr;&nbsp;r)</td>
-			<td>01000111</td>
-		</tr>
-		<tr>
-			<td>(p&nbsp;&and;&nbsp;q)&nbsp;&or;&nbsp;(&not;p&nbsp;&and;&nbsp;r)</td>
-			<td>01010011</td>
-		</tr>
-	</tbody>
-</table>
-
-<p>&nbsp;</p>
 </body>
 </html>
