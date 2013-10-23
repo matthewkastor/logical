@@ -649,7 +649,6 @@
 			<th scope="col">number</th>
 			<th scope="col">gate</th>
 			<th scope="col">javascript</th>
-			<th scope="col">prose</th>
 		</tr>
 	</thead>
 	<tbody>
@@ -659,7 +658,6 @@
 			<td>0</td>
 			<td>&nbsp;</td>
 			<td>false</td>
-			<td>&quot;false&quot;</td>
 		</tr>
 		<tr>
 			<td>⊤</td>
@@ -667,7 +665,6 @@
 			<td>1</td>
 			<td>&nbsp;</td>
 			<td>true</td>
-			<td>&quot;true&quot;</td>
 		</tr>
 	</tbody>
 </table>
@@ -685,7 +682,6 @@
 			<th scope="col">number</th>
 			<th scope="col">gate</th>
 			<th scope="col">javascript</th>
-			<th scope="col">prose</th>
 		</tr>
 	</thead>
 	<tbody>
@@ -695,7 +691,6 @@
 			<td>00</td>
 			<td>&nbsp;</td>
 			<td>false</td>
-			<td>&quot;false&quot;</td>
 		</tr>
 		<tr>
 			<td>=</td>
@@ -703,7 +698,6 @@
 			<td>01</td>
 			<td>&nbsp;</td>
 			<td>p</td>
-			<td>&quot;identify p&quot;</td>
 		</tr>
 		<tr>
 			<td>&not;</td>
@@ -711,7 +705,6 @@
 			<td>10</td>
 			<td>NOT</td>
 			<td>!p</td>
-			<td>&quot;not p&quot;</td>
 		</tr>
 		<tr>
 			<td>⊤</td>
@@ -719,7 +712,6 @@
 			<td>11</td>
 			<td>&nbsp;</td>
 			<td>true</td>
-			<td>&quot;true&quot;</td>
 		</tr>
 	</tbody>
 </table>
@@ -737,7 +729,6 @@
 			<th scope="col">number</th>
 			<th scope="col">gate</th>
 			<th scope="col">javascript</th>
-			<th scope="col">prose</th>
 		</tr>
 	</thead>
 	<tbody>
@@ -747,7 +738,6 @@
 			<td>0000</td>
 			<td>&nbsp;</td>
 			<td>false</td>
-			<td>&quot;false&quot;</td>
 		</tr>
 		<tr>
 			<td>&and;</td>
@@ -755,7 +745,6 @@
 			<td>0001</td>
 			<td>AND</td>
 			<td>p &amp;&amp; q</td>
-			<td>&quot;p and q&quot;</td>
 		</tr>
 		<tr>
 			<td>↛</td>
@@ -763,7 +752,6 @@
 			<td>0010</td>
 			<td>&nbsp;</td>
 			<td>p &amp;&amp; !q</td>
-			<td>&quot;p but not q&quot;, &quot;p does not imply q&quot;, &quot;if not q, follow p, else false&quot;</td>
 		</tr>
 		<tr>
 			<td>p</td>
@@ -771,7 +759,6 @@
 			<td>0011</td>
 			<td>&nbsp;</td>
 			<td>p</td>
-			<td>&quot;identify p&quot;</td>
 		</tr>
 		<tr>
 			<td>↚</td>
@@ -779,7 +766,6 @@
 			<td>0100</td>
 			<td>&nbsp;</td>
 			<td>!p &amp;&amp; q</td>
-			<td>&quot;not p but q&quot;, &quot;p is not implied by q&quot;, &quot;if not p, follow q, else false&quot;</td>
 		</tr>
 		<tr>
 			<td>q</td>
@@ -787,7 +773,6 @@
 			<td>0101</td>
 			<td>&nbsp;</td>
 			<td>q</td>
-			<td>&quot;identify q&quot;</td>
 		</tr>
 		<tr>
 			<td>↮</td>
@@ -795,7 +780,6 @@
 			<td>0110</td>
 			<td>XOR</td>
 			<td>(p&nbsp;||&nbsp;q)&nbsp;&amp;&amp;&nbsp;(!(p&nbsp;&amp;&amp;&nbsp;q))</td>
-			<td>&quot;p or q but not both&quot;</td>
 		</tr>
 		<tr>
 			<td>&or;</td>
@@ -803,7 +787,6 @@
 			<td>0111</td>
 			<td>OR</td>
 			<td>p || q</td>
-			<td>&quot;p or q&quot;</td>
 		</tr>
 		<tr>
 			<td>&darr;</td>
@@ -811,7 +794,6 @@
 			<td>1000</td>
 			<td>NOR</td>
 			<td>!(p || q)</td>
-			<td>&quot;neither p nor q&quot;</td>
 		</tr>
 		<tr>
 			<td>&harr;</td>
@@ -819,7 +801,6 @@
 			<td>1001</td>
 			<td>XNOR</td>
 			<td>!((p&nbsp;||&nbsp;q)&nbsp;&amp;&amp;&nbsp;(!(p&nbsp;&amp;&amp;&nbsp;q)))</td>
-			<td>&quot;p equals q&quot;</td>
 		</tr>
 		<tr>
 			<td>&not;q</td>
@@ -827,7 +808,6 @@
 			<td>1010</td>
 			<td>&nbsp;</td>
 			<td>!q</td>
-			<td>&quot;not q&quot;</td>
 		</tr>
 		<tr>
 			<td>&larr;</td>
@@ -835,7 +815,6 @@
 			<td>1011</td>
 			<td>&nbsp;</td>
 			<td>p || !q</td>
-			<td>&quot;p is implied by q&quot;, &quot;either p, or not q&quot;</td>
 		</tr>
 		<tr>
 			<td>&not;p</td>
@@ -843,7 +822,6 @@
 			<td>1100</td>
 			<td>&nbsp;</td>
 			<td>!p</td>
-			<td>&quot;not p&quot;</td>
 		</tr>
 		<tr>
 			<td>&rarr;</td>
@@ -851,7 +829,6 @@
 			<td>1101</td>
 			<td>&nbsp;</td>
 			<td>!p || q</td>
-			<td>&quot;p implies q&quot;, &quot;either not p, or q&quot;</td>
 		</tr>
 		<tr>
 			<td>&uarr;</td>
@@ -859,7 +836,6 @@
 			<td>1110</td>
 			<td>NAND</td>
 			<td>!(p &amp;&amp; q)</td>
-			<td>&quot;either not p, or not q&quot;, &quot;not p and q simultaneously&quot;</td>
 		</tr>
 		<tr>
 			<td>⊤</td>
@@ -867,7 +843,6 @@
 			<td>1111</td>
 			<td>&nbsp;</td>
 			<td>true</td>
-			<td>&quot;true&quot;</td>
 		</tr>
 	</tbody>
 </table>
@@ -885,7 +860,6 @@
 			<th scope="col">number</th>
 			<th scope="col">gate</th>
 			<th scope="col">javascript</th>
-			<th scope="col">prose</th>
 		</tr>
 	</thead>
 	<tbody>
@@ -895,7 +869,6 @@
 			<td>01000111</td>
 			<td>&nbsp;</td>
 			<td>(!q&nbsp;||&nbsp;p)&nbsp;&amp;&amp;&nbsp;(q&nbsp;||&nbsp;r)</td>
-			<td>&quot;p if q, else r&quot;</td>
 		</tr>
 		<tr>
 			<td>(p&nbsp;&and;&nbsp;q)&nbsp;&or;&nbsp;(&not;p&nbsp;&and;&nbsp;r)</td>
@@ -903,7 +876,6 @@
 			<td>01010011</td>
 			<td>&nbsp;</td>
 			<td>(p&nbsp;&amp;&amp;&nbsp;q)&nbsp;||&nbsp;(!p&nbsp;&amp;&amp;&nbsp;r)</td>
-			<td>&quot;if p, follow q, else r&quot;</td>
 		</tr>
 	</tbody>
 </table>
