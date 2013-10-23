@@ -44,15 +44,15 @@
 	</tbody>
 </table>
 
-<p>Because the function numbers uniquely identify equivalent functions at the given arity, they can be a foreign key to the logical_expressions table. Using the number column will allow you to relate information between most tables. The exception is with the logic_symbols table.</p>
+<p>Because the function numbers uniquely identify equivalent functions at the given arity, they can be a foreign key to the <code>logical_expressions</code> table. Using the <code>number</code> column will allow you to relate information between most tables.</p>
 
-<p>The logic_symbols table is provided to allow looking up symbols, names, and html entities for a given name, symbol, or html entity. As each symbol is unique, the symbol column could be used as an index to this table.</p>
+<p>The <code>logic_symbols</code> table is provided to allow looking up symbols, names, and html entities for a given name, symbol, or html entity. As each symbol is unique, the <code>symbol</code> column could be used as an index to this table.</p>
 
 <h2>Logic Symbols</h2>
 
 <p>This table lists logic symbols used in this database.</p>
 
-<p>The logic_symbols table is provided to allow looking up symbols, names, and html entities for a given name, symbol, or html entity. As each symbol is unique, the symbol column could be used as an index to this table.</p>
+<p>The <code>logic_symbols</code> table is provided to allow looking up symbols, names, and html entities for a given name, symbol, or html entity. As each symbol is unique, the <code>symbol</code> column could be used as an index to this table.</p>
 
 <table border="1" cellpadding="1" cellspacing="1" summary="This table lists logic symbols used in this database.">
 	<thead>
@@ -140,6 +140,8 @@
 <h2>Logical Expressions</h2>
 
 <p>This table lists logical expressions. Unary functions take a single argument <code>p</code>. Binary functions take arguments <code>p</code> and <code>q</code>. Ternary functions take arguments <code>p</code>, <code>q</code>, and <code>r</code>. Each expression is to express unique functionality at the given arity. This ensures that each function number is unique and the column may be used as an index. The notes column is for notes about the expression, such as if it is in some standard form.</p>
+
+<p>Because the function numbers uniquely identify equivalent functions at the given arity, they can be a foreign key to the <code>logical_expressions</code> table. Using the <code>number</code> column will allow you to relate information between most tables.</p>
 
 <table border="1" cellpadding="1" cellspacing="1" summary="This table lists logical expressions.">
 	<caption>logical_expressions</caption>
@@ -792,7 +794,7 @@
 
 <h2>JavaScript</h2>
 
-<p>JavaScript equvalents of logic expressions. The javascript column holds the javascript expression. The number column references the logic expression number. The notes column is for notes about the JavaScript expression, such as if it is in some standard form.</p>
+<p>JavaScript equvalents of logic expressions. The javascript column holds the javascript expression. The number column references the logic expression number. The notes column is for notes about the expression, such as if it is in some standard form.</p>
 
 <table border="1" cellpadding="1" cellspacing="1" summary="JavaScript equvalents of logical functions which act on boolean inputs.">
 	<thead>
